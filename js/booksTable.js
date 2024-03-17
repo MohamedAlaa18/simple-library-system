@@ -4,8 +4,9 @@ const books = JSON.parse(localStorage.getItem("books"));
 document.addEventListener("DOMContentLoaded", function () {
     renderBooks(books);
 });
-//render books function for first time;
+//render the books;
 function renderBooks(books) {
+    console.log(books);
     const booksTableBody = document.getElementById("booksTableBody");
 
     books.forEach((book, index) => {

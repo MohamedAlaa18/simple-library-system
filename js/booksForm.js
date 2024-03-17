@@ -64,7 +64,16 @@ let counter = 1;
         counter++;
 
         if (counter > numberOfBooks) {
-          localStorage.setItem("books", JSON.stringify(bookObject.getBooks()));
+          let existingBooks = JSON.parse(localStorage.getItem("books"));
+
+          if (!existingBooks) {
+            existingBooks = [];
+          }
+
+          console.log(bookObject.getBooks())
+          existingBooks.push(...bookObject.getBooks());
+
+          localStorage.setItem("books", JSON.stringify(existingBooks));
           window.location.href = "booksTable.html";
         } else {
           updateCounter();
