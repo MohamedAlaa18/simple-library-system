@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Book Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/addBooks.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.ico" />
+</head>
+
+<body>
+    <div class="hero_section">
+        <!-- header section starts -->
+        <header class="header_section">
+            <div class="container-fluid container">
+                <nav class="navbar navbar-expand-lg custom_nav-container justify-content-between">
+                    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                        <img src="images/contact-img.png" alt="header" style="width: 35px;"> <span>BookStacker</span>
+                    </a>
+
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav d-flex flex-row me-2 me-md-0 pe-md-2">
+                            <li class="nav-item mr-2 ml-2 home">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a class="nav-link" href="booksNumber.html">Add Books</a>
+                            </li>
+                        </ul>
+                        <form class="search_form d-md-block d-none">
+                            <input type="text" class="form-control me-2" placeholder="Search here..." readonly>
+                            <button class="btn btn-custom" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+        <!-- end header section -->
+
+        <!-- form section starts -->
+        <section class="Booking_section section-2">
+            <div class="container">
+                <h1>Add Books Details</h1>
+                <div class="row">
+                    <form id="bookForm" action="booksTable.html" class="row g-2 needs-validation" novalidate>
+                        <h5 style="color: #44b89d;">Book Number : <span id="bookNumber"></span></h5>
+
+                        <div>
+                            <label for="bookName" class="form-label">Book Name</label>
+                            <input type="text" class="form-control" id="bookName" pattern="[A-Za-z]{1,32}" required>
+                            <div class="invalid-feedback">
+                                Please enter the name of the book.
+                            </div>
+                        </div>
+                        <div>
+                            <label for="publishDate" class="form-label">Publish Date</label>
+                            <input type="date" class="form-control" id="publishDate" pattern="/^\d{4}-\d{2}-\d{2}$/"
+                                required>
+                            <div class="invalid-feedback">
+                                Please enter the publish date of the book.
+                            </div>
+                        </div>
+                        <div>
+                            <label for="price" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="price" min="1" max="500" required>
+                            <div class="invalid-feedback">
+                                Please enter the price of the book.
+                            </div>
+                        </div>
+                        <div>
+                            <label for="authorName" class="form-label">Author Name</label>
+                            <input type="text" class="form-control" id="authorName" pattern="[A-Za-z]{1,32}" required>
+                            <div class="invalid-feedback">
+                                Please enter the name of the author.
+                            </div>
+                        </div>
+                        <div>
+                            <label for="authorEmail" class="form-label">Author Email</label>
+                            <input type="email" class="form-control" id="authorEmail"
+                                pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for the author.
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-custom" type="submit">Add Book <i class="fa fa-book"
+                                    style="margin-bottom: 2px;"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- end form section -->
+
+        <!-- footer section starts -->
+        <footer class="footer_section">
+            <div class="container-fluid container">
+                <nav class="navbar navbar-expand-lg custom_nav-container justify-content-between">
+                    <a class="navbar-brand m-auto d-flex flex-wrap align-items-center" href="" style="font-size: 20px;">
+                        <span class="m-auto p-0 d-md-inline d-none">Developed by </span>
+                        <span class="p-0 pe-2 ps-2 m-auto" style="color: #44b89d;">Mohamed Alaa & Israa Fathy</span>
+                    </a>
+                </nav>
+            </div>
+        </footer>
+        <!-- end footer section -->
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/booksForm.js"></script>
+</body>
+
+</html>

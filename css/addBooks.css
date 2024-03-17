@@ -1,0 +1,102 @@
+.Booking_section {
+  background-color: #f8f9fa;
+  min-height: 100dvh;
+}
+.Booking_section .container {
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+.Booking_section h1 {
+  color: #343a40;
+  text-align: center;
+}
+
+.Booking_section .form-control {
+  border-color: #dee2e6;
+}
+
+.Booking_section .btn-custom,
+.Booking_section .btn-next {
+  background-color: #44b89d;
+  border-color: #44b89d;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Booking_section .btn-custom:hover,
+.Booking_section .btn-custom:active,
+.Booking_section .btn-custom:hover:active {
+  background-color: white;
+  border-color: #3d9a83;
+  color: #3d9a83;
+}
+
+.Booking_section .btn-custom .fa {
+  margin-top: 4px;
+}
+
+.Booking_section .btn-next {
+  background-color: #44b89d;
+  border-color: #44b89d;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.Booking_section .btn-next:hover,
+.Booking_section .btn-next:active,
+.Booking_section .btn-next:hover:active {
+  background-color: #3d9a83; /* Change background color on hover */
+  border-color: #3d9a83; /* Change border color on hover */
+  color: white; /* Change text color on hover */
+}
+
+.Booking_section .btn-custom .fa {
+  margin-top: 4px;
+}
+
+.Booking_section .btn-next span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Booking_section .btn-next span:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.3s;
+}
+
+.Booking_section .btn-next:hover span {
+  padding-right: 20px;
+}
+
+.Booking_section .btn-next:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.Booking_section .form-control:focus {
+  border-color: #44b89d;
+  box-shadow: 0 0 0 0.25rem rgba(68, 184, 157, 0.25);
+}
+
+@media (min-width: 760px) {
+  .img-box .add-book-img {
+    width: 600px;
+  }
+}
+@media (max-width: 760px) {
+  .img-box .add-book-img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/addBooks.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.ico" />
+    <title>Enter Books Numbers</title>
+</head>
+
+<body>
+    <div class="hero_section">
+        <!-- header section starts -->
+        <header class="header_section">
+            <div class="container-fluid container">
+                <nav class="navbar navbar-expand-lg custom_nav-container justify-content-between">
+                    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                        <img src="images/contact-img.png" alt="header" style="width: 35px;"> <span>BookStacker</span>
+                    </a>
+
+                    <div class="d-flex align-items-center">
+                        <ul class="navbar-nav d-flex flex-row me-2 me-md-0 pe-md-2">
+                            <li class="nav-item mr-2 ml-2 home">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a class="nav-link" href="booksNumber.html">Add Books</a>
+                            </li>
+                        </ul>
+                        <form class="search_form d-md-block d-none">
+                            <input type="text" class="form-control me-2" placeholder="Search here..." readonly>
+                            <button class="btn btn-custom" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+        </header>
+        <!-- end header section -->
+
+        <!-- form section -->
+        <section class="Booking_section section-1">
+            <div class="container">
+                <h1>Add Books Count</h1>
+                <form id="numberOfBooksForm" action="booksForm.html" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="numberOfBooks" class="form-label">Number of Books:</label>
+                        <input type="number" class="form-control" id="numberOfBooks" name="numberOfBooks" min="1"
+                            max="5" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid number of books.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn align-content-center btn-next">
+                        <span>Next</span>
+                        <!-- <i class="fa fa-chevron-right" style="font-size: 12px;"></i> -->
+                        <!-- <i class="fa fa-hand-point-right"></i> -->
+                    </button>
+                </form>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="images/slider-img.png" alt="" class="add-book-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end form section -->
+
+        <!-- footer section starts -->
+        <footer class="footer_section">
+            <div class="container-fluid container">
+                <nav class="navbar navbar-expand-lg custom_nav-container justify-content-between">
+                    <a class="navbar-brand m-auto d-flex flex-wrap align-items-center" href="" style="font-size: 20px;">
+                        <span class="m-auto p-0 d-md-inline d-none">Developed by </span>
+                        <span class="p-0 pe-2 ps-2 m-auto" style="color: #44b89d;">Mohamed Alaa & Israa Fathy</span>
+                    </a>
+                </nav>
+            </div>
+        </footer>
+        <!-- end footer section -->
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/booksNumber.js"></script>
+</body>
+
+</html>
