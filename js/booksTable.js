@@ -104,13 +104,6 @@ function saveEdit(index) {
     } else {
         updateBook(index, book, books);
     }
-
-
-    // if (isValid) {
-    //     books[index] = book;
-    //     localStorage.setItem("books", JSON.stringify(books));
-    //     renderBookAfterAction(index, books[index]);
-    // }
 }
 function updateBook(index, book, books) {
 

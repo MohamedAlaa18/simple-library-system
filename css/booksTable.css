@@ -5,7 +5,7 @@
 
 .Table_section .container {
   margin: 100px auto;
-  min-width: 1300px;
+  min-width: 1000px;
 }
 
 .Table_section h1 {
@@ -52,7 +52,7 @@
 .Table_section th,
 .Table_section td {
   padding: 8px;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -85,8 +85,18 @@
   border: 1px solid rgba(68, 184, 157, 0.5);
   border-radius: 5px;
   outline: rgb(68, 184, 157);
+  background-color: white;
 }
-
+.Table_section input[type="number"] {
+  width: 50px;
+}
+.Table_section input[type="text"],
+.Table_section input[type="date"] {
+  width: 125px;
+}
+.Table_section input[type="file"] {
+  width: 100px;
+}
 .Table_section .table > :not(caption) > * > * {
   background-color: transparent !important;
   border-bottom-width: unset !important;

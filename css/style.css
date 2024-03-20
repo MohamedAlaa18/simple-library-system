@@ -136,7 +136,6 @@ button:active {
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 75px 0;
   min-height: 100dvh;
   background-color: #f5f6f9;
   position: relative;
@@ -247,47 +246,79 @@ button:active {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(6, 53, 71, 0.815);
 }
-/* .book-section .card{
-width: 200px;
-} */
 
-/* books section */
 
-.books-section {
+/* contact section */
+/* .contact_section {
   background-color: #f5f6f9;
+  padding: 90px 0;
+}
+.contact_section h2 {
+  margin-bottom: 45px;
 }
 
-.books-section .card {
-  /* box-shadow: rgba(68, 184, 157) 0px 0px 0px 1px; */
-  border: 2px solid rgba(68, 184, 157);
+.contact_section form {
+  padding-right: 35px;
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
+.contact_section input {
+  width: 100%;
+  border: 0;
+  height: 50px;
+  border-radius: 25px;
+  margin-bottom: 25px;
+  padding-left: 25px;
+  outline: none;
+  color: #101010;
+  background: #f1f1f1;
+  border: 1px solid #44b89d
 }
 
-.card-img {
-  transition: transform 0.3s;
+.contact_section input::-webkit-input-placeholder {
+  color: #131313;
 }
 
-.card:hover .card-img {
-  transform: scale(1.1);
+.contact_section input:-ms-input-placeholder {
+  color: #131313;
 }
 
-.card-img-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(6, 53, 71, 0.75);
-  color: #dddddd;
-  opacity: 0;
-  z-index: 1;
-  transition: opacity 0.3s;
+.contact_section input::-ms-input-placeholder {
+  color: #131313;
 }
 
-.card:hover .card-img-overlay {
-  opacity: 1;
+.contact_section input::placeholder {
+  color: #131313;
 }
+
+.contact_section input.message-box {
+  height: 120px;
+  border-radius: 15px;
+}
+
+.contact_section .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.contact_section button {
+  display: inline-block;
+  padding: 12px 45px;
+  background-color: #44b89d;
+  color: #ffffff;
+  border-radius: 45px;
+  border: 1px solid #44b89d;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.contact_section button:hover {
+  background-color: transparent;
+  color: #44b89d;
+}
+
+.contact_section .img-box img {
+  width: 600px;
+} */

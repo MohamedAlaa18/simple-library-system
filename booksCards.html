@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/booksTable.css">
-    <link rel="stylesheet" href="css/addBooks.css">
+    <link rel="stylesheet" href="css/booksCards.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/svg+xml" href="images/library.ico" />
@@ -84,29 +83,20 @@
         </header>
         <!-- end header section -->
 
-        <!-- Books table section -->
-        <section class="Table_section section-3">
-            <div class="container">
-                <h1>Books Table</h1>
-                <table class="table mt-3">
-                    <thead>
-                        <tr>
-                            <th>Book Name</th>
-                            <th>Publish Date</th>
-                            <th>Book Cover</th>
-                            <th>Price</th>
-                            <th>Author Name</th>
-                            <th>Author Email</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="booksTableBody">
-                        <!-- Books data will be dynamically inserted here -->
-                    </tbody>
-                </table>
+        <!-- Books section starts -->
+        <section class="books-section" id="books-section">
+            <div class="container wrapper">
+                <div class="row">
+                    <div class="col text-center">
+                        <h1>Books Section</h1>
+                    </div>
+                </div>
+                <div id="books-area" class="books-section my-4 d-flex flex-row flex-wrap gap-4 justify-content-center">
+                    <!-- Your dynamically generated cards will be inserted here -->
+                </div>
             </div>
         </section>
-        <!-- end Books table section -->
+        <!-- Books section section -->
 
         <!-- footer section starts -->
         <footer class="footer_section">
@@ -122,7 +112,7 @@
         <!-- end footer section -->
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/booksTable.js"></script>
+    <script src="js/booksCards.js"></script>
 </body>
 
 </html>
