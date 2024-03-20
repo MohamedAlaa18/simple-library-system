@@ -10,16 +10,33 @@ class Book {
     this.books = [];
   }
 
-  addBook(bookName, publishDate, price, authorName, authorEmail) {
+  addBook(bookName, publishDate, bookCoverFile, price, authorName, authorEmail) {
     const author = new Author(authorName, authorEmail);
-    const book = {
-      name: bookName,
-      publishDate: publishDate,
-      price: price,
-      author: author
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const bookCoverDataURL = reader.result; // Get the data URL
+      const book = {
+        name: bookName,
+        publishDate: publishDate,
+        bookCover: bookCoverDataURL, // Store the data URL instead of the file object
+        price: price,
+        author: author
+      };
+
+      // Retrieve existing books from localStorage
+      const existingBooks = JSON.parse(localStorage.getItem("books")) || [];
+
+      // Append the new book object to the existing array
+      existingBooks.push(book);
+
+      // Update localStorage with the updated books array
+      localStorage.setItem("books", JSON.stringify(existingBooks));
     };
-    this.books.push(book);
+
+    reader.readAsDataURL(bookCoverFile); // Read the file as a data URL
   }
+
 
   getBooks() {
     return this.books;
@@ -47,14 +64,17 @@ let counter = 1;
 
         let bookName = document.getElementById("bookName").value;
         let publishDate = document.getElementById("publishDate").value;
+        let bookCoverInput = document.getElementById("bookCover");
+        let bookCoverFile = bookCoverInput.files[0]; // Get the file object
         let price = document.getElementById("price").value;
         let authorName = document.getElementById("authorName").value;
         let authorEmail = document.getElementById("authorEmail").value;
 
-        bookObject.addBook(bookName, publishDate, price, authorName, authorEmail);
+        bookObject.addBook(bookName, publishDate, bookCoverFile, price, authorName, authorEmail);
 
         document.getElementById("bookName").value = "";
         document.getElementById("publishDate").value = "";
+        document.getElementById("bookCover").value = ""
         document.getElementById("price").value = "";
         document.getElementById("authorName").value = "";
         document.getElementById("authorEmail").value = "";
@@ -80,8 +100,8 @@ let counter = 1;
         }
 
       }
-
     }, false);
+
   });
 })();
 
@@ -92,3 +112,5 @@ document.addEventListener("DOMContentLoaded", function () {
 function updateCounter() {
   document.getElementById("bookNumber").textContent = counter;
 }
+
+const bookCoverInput = document.getElementById('bookCover');

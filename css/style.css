@@ -3,6 +3,9 @@ body {
   font-family: "Mulish", sans-serif;
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 *,
 *:after,
 *:before {
@@ -56,17 +59,29 @@ button:active {
   .home {
     margin-right: 20px;
   }
-  .home {
-    margin-right: 20px;
-  }
 }
 
 .custom_nav-container .navbar-nav .nav-item .nav-link {
-  color: #ffffff;
   font-weight: 500;
+}
+.custom_nav-container .desktop-nav .navbar-nav .nav-item .nav-link {
+  color: #ffffff;
 }
 .custom_nav-container .navbar-nav .nav-item .nav-link:hover {
   color: #44b89d;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(68, 184, 157, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #44b89d;
+}
+.navbar button.navbar-toggler:hover,
+.navbar button.navbar-toggler:active,
+.navbar button.navbar-toggler:hover:active,
+.navbar button.navbar-toggler:focus {
+  color: rgba(68, 184, 157, 0.25);
 }
 .search_form {
   display: flex;
@@ -231,4 +246,48 @@ button:active {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(6, 53, 71, 0.815);
+}
+/* .book-section .card{
+width: 200px;
+} */
+
+/* books section */
+
+.books-section {
+  background-color: #f5f6f9;
+}
+
+.books-section .card {
+  /* box-shadow: rgba(68, 184, 157) 0px 0px 0px 1px; */
+  border: 2px solid rgba(68, 184, 157);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img {
+  transition: transform 0.3s;
+}
+
+.card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(6, 53, 71, 0.75);
+  color: #dddddd;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.card:hover .card-img-overlay {
+  opacity: 1;
 }

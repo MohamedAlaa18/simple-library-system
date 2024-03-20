@@ -17,31 +17,64 @@
     <div class="hero_section">
         <!-- header section starts -->
         <header class="header_section">
-            <div class="container-fluid container">
-                <nav class="navbar navbar-expand-lg custom_nav-container justify-content-between">
-                    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                        <img src="images/contact-img.png" alt="header" style="width: 35px;"> <span>BookStacker</span>
-                    </a>
+            <nav class="container-fluid container navbar navbar-expand-lg custom_nav-container justify-content-between">
+                <a class="navbar-brand d-flex align-items-center gap-1" href="index.html">
+                    <span>BookStacker</span>
+                </a>
 
-                    <div class="d-flex align-items-center">
-                        <ul class="navbar-nav d-flex flex-row me-2 me-md-0 pe-md-2">
-                            <li class="nav-item mr-2 ml-2 home">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link" href="booksNumber.html">Add Books</a>
-                            </li>
-                        </ul>
-                        <form id="searchForm" class="search_form d-md-block d-none">
-                            <input id="searchInput" type="text" class="form-control me-2" placeholder="Search here...">
-                            <button class="btn btn-custom" type="submit">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </form>
+                <!-- Button to trigger the modal -->
+                <button type="button" class="navbar-toggler ml-auto custom-toggler" data-bs-toggle="modal"
+                    data-bs-target="#popupMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Popup Menu Modal -->
+                <div class="modal fade" id="popupMenu" tabindex="-1" aria-labelledby="popupMenuLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="popupMenuLabel">Menu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="navbar-nav d-flex flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="booksNumber.html">Add Books</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="booksTable.html">Books Table</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </nav>
-
-            </div>
+                </div>
+                <!-- desktop menu -->
+                <div class="d-lg-flex d-none desktop-nav gap-2">
+                    <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booksNumber.html">Add Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booksTable.html">Books Table</a>
+                        </li>
+                    </ul>
+                    <form class="search_form">
+                        <input type="text" class="form-control" placeholder="Search here..." readonly>
+                        <button class="btn btn-custom" type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </nav>
         </header>
         <!-- end header section -->
 
@@ -54,6 +87,7 @@
                         <tr>
                             <th>Book Name</th>
                             <th>Publish Date</th>
+                            <th>Book Cover</th>
                             <th>Price</th>
                             <th>Author Name</th>
                             <th>Author Email</th>

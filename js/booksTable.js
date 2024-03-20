@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //render the books;
 function renderBooks(books) {
-    console.log(books);
     const booksTableBody = document.getElementById("booksTableBody");
 
     books.forEach((book, index) => {
@@ -20,6 +19,12 @@ function renderBooks(books) {
         const publishDateCell = document.createElement("td");
         publishDateCell.textContent = book.publishDate;
         row.appendChild(publishDateCell);
+
+        const bookCoverCell = document.createElement("td");
+        const bookCoverImage = document.createElement("img");
+        bookCoverImage.src = book.bookCover; // Set the src attribute to the data URLh
+        bookCoverCell.appendChild(bookCoverImage);
+        row.appendChild(bookCoverCell);
 
         const priceCell = document.createElement("td");
         priceCell.textContent = book.price;
@@ -66,6 +71,7 @@ function editBook(index) {
             `
             <td><input type="text" id="editName" value="${book.name}"></td>
             <td><input type="date" id="editPublishDate" value="${book.publishDate}"></td>
+            <td><input type="file" id="editBookCover" accept="image/png, image/jpeg"></td>
             <td><input type="number" id="editPrice" value="${book.price}"></td>
             <td><input type="text" id="editAuthorName" value="${book.author.name}"></td>
             <td><input type="email" id="editAuthorEmail" value="${book.author.email}"></td>
@@ -76,6 +82,7 @@ function editBook(index) {
         `;
     }
 }
+
 //save the edit and validation function
 function saveEdit(index) {
     const books = JSON.parse(localStorage.getItem("books"));
@@ -85,6 +92,27 @@ function saveEdit(index) {
     book.price = document.getElementById("editPrice").value;
     book.author.name = document.getElementById("editAuthorName").value;
     book.author.email = document.getElementById("editAuthorEmail").value;
+
+    const fileInput = document.getElementById("editBookCover");
+    if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            book.bookCover = e.target.result;
+            updateBook(index, book, books);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+    } else {
+        updateBook(index, book, books);
+    }
+
+
+    // if (isValid) {
+    //     books[index] = book;
+    //     localStorage.setItem("books", JSON.stringify(books));
+    //     renderBookAfterAction(index, books[index]);
+    // }
+}
+function updateBook(index, book, books) {
 
     const nameReg = /^[A-Za-z]{1,32}$/;
     const emailReg = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
@@ -132,6 +160,7 @@ function saveEdit(index) {
         isValid = false;
     }
 
+
     if (isValid) {
         books[index] = book;
         localStorage.setItem("books", JSON.stringify(books));
@@ -152,6 +181,7 @@ function renderBookAfterAction(index, book) {
     row.innerHTML = `
         <td>${book.name}</td>
         <td>${book.publishDate}</td>
+        <td><img src="${book.bookCover}"/></td>
         <td>${book.price}</td>
         <td>${book.author.name}</td>
         <td>${book.author.email}</td>
@@ -161,7 +191,7 @@ function renderBookAfterAction(index, book) {
         </td>
     `;
 }
-
+s
 //delete function
 function deleteBook(index) {
     const books = JSON.parse(localStorage.getItem("books"));

@@ -5,7 +5,7 @@
 
 .Table_section .container {
   margin: 100px auto;
-  min-width: 1150px;
+  min-width: 1300px;
 }
 
 .Table_section h1 {
@@ -62,6 +62,7 @@
 .Table_section tbody tr {
   background-color: white;
   color: rgb(68, 184, 157);
+  text-transform: capitalize;
 }
 
 .Table_section thead tr {
@@ -70,6 +71,11 @@
 .Table_section thead tr th {
   color: white;
   font-weight: 500;
+}
+.Table_section tbody td img {
+  width: 60px;
+  border-radius: 5px;
+  box-shadow: #063547 0px 0px 0px 2px;
 }
 .Table_section tbody tr:hover {
   background-color: rgba(68, 184, 157, 0.1);
