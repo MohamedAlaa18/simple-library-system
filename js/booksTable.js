@@ -184,7 +184,7 @@ function renderBookAfterAction(index, book) {
         </td>
     `;
 }
-s
+
 //delete function
 function deleteBook(index) {
     const books = JSON.parse(localStorage.getItem("books"));

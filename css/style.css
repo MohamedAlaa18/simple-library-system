@@ -70,6 +70,11 @@ button:active {
 .custom_nav-container .navbar-nav .nav-item .nav-link:hover {
   color: #44b89d;
 }
+.books-nav-disabled.disabled {
+  text-decoration: line-through;
+  text-decoration-color: #44b89d;
+  color: gray !important;
+}
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(68, 184, 157, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -246,79 +251,3 @@ button:active {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(6, 53, 71, 0.815);
 }
-
-
-/* contact section */
-/* .contact_section {
-  background-color: #f5f6f9;
-  padding: 90px 0;
-}
-.contact_section h2 {
-  margin-bottom: 45px;
-}
-
-.contact_section form {
-  padding-right: 35px;
-}
-
-.contact_section input {
-  width: 100%;
-  border: 0;
-  height: 50px;
-  border-radius: 25px;
-  margin-bottom: 25px;
-  padding-left: 25px;
-  outline: none;
-  color: #101010;
-  background: #f1f1f1;
-  border: 1px solid #44b89d
-}
-
-.contact_section input::-webkit-input-placeholder {
-  color: #131313;
-}
-
-.contact_section input:-ms-input-placeholder {
-  color: #131313;
-}
-
-.contact_section input::-ms-input-placeholder {
-  color: #131313;
-}
-
-.contact_section input::placeholder {
-  color: #131313;
-}
-
-.contact_section input.message-box {
-  height: 120px;
-  border-radius: 15px;
-}
-
-.contact_section .btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 10px;
-}
-
-.contact_section button {
-  display: inline-block;
-  padding: 12px 45px;
-  background-color: #44b89d;
-  color: #ffffff;
-  border-radius: 45px;
-  border: 1px solid #44b89d;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  width: 100%;
-}
-
-.contact_section button:hover {
-  background-color: transparent;
-  color: #44b89d;
-}
-
-.contact_section .img-box img {
-  width: 600px;
-} */

@@ -8,9 +8,8 @@ function renderBooksCards() {
     booksArea.innerHTML = "";
 
     if (books.length === 0) {
-        const booksSection = document.getElementById('books-section')
-        booksSection.innerHTML = '';
-        ;
+        // const booksSection= document.getElementById('books-section');
+        booksArea.innerHTML = '';
     } else {
         books.forEach((book) => {
             const card = `
