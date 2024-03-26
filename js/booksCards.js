@@ -1,9 +1,9 @@
+const books = JSON.parse(localStorage.getItem("books")) || []
 document.addEventListener("DOMContentLoaded", function () {
-    renderBooksCards();
+    renderBooksCards(books);
 });
-
-function renderBooksCards() {
-    const books = JSON.parse(localStorage.getItem("books")) || [];
+;
+function renderBooksCards(books) {
     const booksArea = document.getElementById('books-area');
     booksArea.innerHTML = "";
 
@@ -23,7 +23,7 @@ function renderBooksCards() {
                             </div>
                             <div class="">
                                 <div class="media-body d-flex align-items-center gap-2">
-                                    <img class="mr-3 rounded-circle" src="images/profile-pic.png" alt="Generic placeholder image" style="max-width:50px">
+                                    <img class="mr-3 rounded-circle" src="${book.author.name.toLowerCase() === 'mohamed' ? 'images/profile-pic.png' : 'images/profile-temp.jpg'}" alt="Generic placeholder image" style="max-width:50px">
                                     <h6 class="my-0 text-capitalize fw-bolder">${book.author.name}</h6>
                                 </div>
                             </div>
@@ -36,3 +36,15 @@ function renderBooksCards() {
     }
 }
 
+//search section
+document.addEventListener("DOMContentLoaded", function () {
+    const searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const books = JSON.parse(localStorage.getItem('books'));
+        const filteredBooks = books.filter(book => book.name.toLowerCase().includes(searchTerm));
+
+        renderBooksCards(filteredBooks);
+    });
+});

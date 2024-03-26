@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const books = JSON.parse(localStorage.getItem("books"));
 
-    if (books === null) {
+    if (books === null || books.length == 0) {
         const booksTableLinks = document.querySelectorAll(".books-nav-disabled");
         booksTableLinks.forEach(link => {
             link.addEventListener("click", function (event) {

@@ -105,6 +105,7 @@ function saveEdit(index) {
         updateBook(index, book, books);
     }
 }
+//update Book function
 function updateBook(index, book, books) {
 
     const nameReg = /^[A-Za-z]{1,32}$/;

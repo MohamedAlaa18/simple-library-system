@@ -19,22 +19,24 @@ class Book {
       const book = {
         name: bookName,
         publishDate: publishDate,
-        bookCover: bookCoverDataURL, // Store the data URL instead of the file object
+        bookCover: bookCoverDataURL,
         price: price,
         author: author
       };
 
-      // Retrieve existing books from localStorage
       const existingBooks = JSON.parse(localStorage.getItem("books")) || [];
 
-      // Append the new book object to the existing array
       existingBooks.push(book);
 
-      // Update localStorage with the updated books array
       localStorage.setItem("books", JSON.stringify(existingBooks));
     };
 
     reader.readAsDataURL(bookCoverFile); // Read the file as a data URL
+  }
+
+
+  getBooks() {
+    return this.books;
   }
 
 

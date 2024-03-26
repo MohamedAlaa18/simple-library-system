@@ -99,7 +99,8 @@ button:active {
   min-width: unset;
   border: none;
 }
-.search_form button {
+.search_form button,
+.search_form .btn-custom-disabled:hover {
   padding: 0;
   border: none;
   outline: none;
@@ -109,7 +110,11 @@ button:active {
   width: 35px;
   height: 35px;
 }
-.search_form button:hover {
+.search_form .btn-custom-disabled,
+.search_form .search-disabled {
+  cursor: context-menu !important;
+}
+.search_form .btn-custom:hover {
   border: 1px solid #44b89d;
 }
 .btn-custom .fa {
